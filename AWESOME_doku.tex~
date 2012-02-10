@@ -1,0 +1,81 @@
+\documentclass[a4paper,english,10.5pt]{scrartcl}
+\linespread{1.1}
+\usepackage{amsmath, amssymb, latexsym}
+%\usepackage{ngerman}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{bibentry}
+\usepackage{lmodern} 
+\usepackage{grffile}
+\usepackage{pdfpages}
+\usepackage[pdftex]{hyperref}
+\usepackage{natbib}
+\hypersetup
+{%
+  pdftitle={AWESOME documentation},
+  pdfauthor={Harald Hoeller},
+  pdfsubject={...},
+  pdfkeywords={AWEsome Simulations Of Metal Enrichment}
+}
+\usepackage{lscape}
+\usepackage{multicol}
+\usepackage{ae}
+\usepackage{color}
+\usepackage{aecompl}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\pagestyle{headings}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\setlength\parskip{\smallskipamount}
+%\setlength\parindent{0pt}
+\usepackage{amsmath}
+\usepackage{graphicx}
+%\usepackage{subfigure}
+\usepackage{subfig}
+%\usepackage[countmax]{subfloat}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{appendix}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{wrapfig}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{fancybox} 
+\usepackage{ifthen} 
+\renewcommand{\theenumi}{\emph{\small{\roman{enumi}}.)}}
+\renewcommand{\labelenumi}{\theenumi}
+\title{AWESOME documentation \\
+metal enrichment setup 2011ff}
+\author{Harald H\"oller \thanks{Department of Astro- and Particle Physics, 
+University of Innsbruck, harald.hoeller@uibk.ac.at}}
+
+\begin{document}
+\maketitle 
+
+\begin{abstract}
+\textcolor{red}{\bf FOR INTERNAL USE}
+\end{abstract}
+
+\section{Initial Conditions}
+
+\section{N-body Simulation}
+
+\section{Halo Finder + Merger Trees}
+
+\section{SAM}
+
+\section{Hydro}
+
+\bibliography{AWESOME}
+\renewcommand{\bibsection}{\section{References}}
+\setlength{\bibhang}{1.24cm}
+\setlength{\parindent}{3cm}
+\setlength{\bibsep}{0cm}
+\bibliographystyle{dcu}
+\setcitestyle{authoryear,round,citesep={;},aysep={,},yysep={;}}
+\gdef\harvardand{\&}
+\end{document}
+
+
