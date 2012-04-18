@@ -59,12 +59,92 @@ University of Innsbruck, harald.hoeller@uibk.ac.at}}
 \end{abstract}
 
 \section{Initial Conditions}
+\subsection{Using Cosmics 1.04 (Standard)}
+
+The (constrained) initial conditions generator \texttt{Cosmics 1.04} 
+can be downloaded from \texttt{http://web.mit.edu/edbert/cosmics-1.04.tar.gz}. 
+The acually used version is to be gotten as git repository
+\texttt{git@github.com:harre/cosmics-initial-conditions.git}. 
+
+\begin{description}
+
+\item[Step 1: Make] 
+
+For making, one has to specify the system and adapt the corresponding 
+Makefile accordingly. In the folder \texttt{Make\_files} one has to adapt 
+\texttt{Make.LINUX} to 
+\begin{verbatim}
+F77 = ifort
+F77FLAGS = -O2 -parallel -par-report1 -openmp
+FFT_OBJ = fft3r.o
+CC = icc
+CFLAGS = -O2 -parallel -par-report1 -openmp
+\end{verbatim}
+and load the intel compiler \texttt{module load intel/64/12.1}. The intel 
+compiler is used since for $512^3$ particle initial conditions there is a 
+problem with memory allocation with \texttt{gcc} (can be dealt with flags however). 
+When one uses the version from the git repo, changing the 
+Makefile should not be necessary anyhow. 
+
+\item[Step 2: Linear Extrapolation: \texttt{linger}] 
+
+In the folder \texttt{linger\_syn} the program with the same name is to 
+be executed. This program generates a file called \texttt{linger.dat} which 
+is then used by the actual IC generator \texttt{grafic}. 
+
+When one executes the program from github, the message 
+\begin{verbatim} 
+ 	
+ >>>>>    MAKE SURE YOU START THE PROGRAM WITH
+ >>>>>    $./linger_syn | tee lingersynIO.out
+ 	
+\end{verbatim}
+motivates the recording of IO in order to ensure reproducability of simulations. 
+Ideally one would also indicate some physical parameters in 
+the IO file, such as \texttt{lingersynIO\_h70.out}. 
+
+\textbf{Note: } There are files already in the repo which can be used, namely 
+\texttt{linger\_h100n216.dat} and  \texttt{linger\_h70n216.dat} for 
+Hubble constants $70.3$ and $100$. They were 
+generated using matter transfer functions (choice 0) 
+\begin{verbatim}
+ Enter 1 for full Boltzmann equation for CMB (lmax<=10000, linear k)
+    or 0 for matter transfer functions only (lmax=100, log k)
+\end{verbatim}
+and the parameters 
+\begin{verbatim}
+ Enter kmin (1/Mpc), kmax (1/Mpc), nk, zend
+\end{verbatim}
+are set to \texttt{1E-5}, \texttt{50}, \texttt{216}, \texttt{0}. 
+The last input is then which kind of IC one wants to generate 
+\begin{verbatim}
+ Initial conditions cases:
+     1 for isentropic (adiabatic) fluctuations,
+     2 for cdm entropy/isocurvature fluctuations, or
+     3 for baryon entropy/isocurvature fluctuations, or
+     4 for seed/isocurvature fluctuations
+ Enter 1, 2, 3, or 4 now
+\end{verbatim}
+where we chose \texttt{2}. 
+
+\textbf{Note: } If one changes the cosmological parameters for 
+\texttt{linger\_syn} one usually hast to delete the files \texttt{linger.dat} 
+and \text{lingerg.dat} first. 
+
+\end{description}
+
+
+
+\subsection{Using NGenIC}
 
 \section{N-body Simulation}
 
 \section{Halo Finder + Merger Trees}
 
 \section{SAM}
+\subsection{Galacticus}
+\subsubsection{Compilation}
+
 
 \subsection{Galacticus v0.9.1}
 

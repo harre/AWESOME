@@ -1,5 +1,10 @@
 \BOOKMARK [1][-]{section.1}{Initial Conditions}{}
+\BOOKMARK [2][-]{subsection.1.1}{Using Cosmics 1.04 \(Standard\)}{section.1}
+\BOOKMARK [2][-]{subsection.1.2}{Using NGenIC}{section.1}
 \BOOKMARK [1][-]{section.2}{N-body Simulation}{}
 \BOOKMARK [1][-]{section.3}{Halo Finder + Merger Trees}{}
 \BOOKMARK [1][-]{section.4}{SAM}{}
+\BOOKMARK [2][-]{subsection.4.1}{Galacticus}{section.4}
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Compilation}{subsection.4.1}
+\BOOKMARK [2][-]{subsection.4.2}{Galacticus v0.9.1}{section.4}
 \BOOKMARK [1][-]{section.5}{Hydro}{}
