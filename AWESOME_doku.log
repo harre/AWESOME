@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.18)  18 APR 2012 13:54
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.18)  18 APR 2012 14:09
 entering extended mode
  %&-line parsing enabled.
 **AWESOME_doku.tex
@@ -725,7 +725,7 @@ LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (42.28726pt too wide) in paragraph at lines 106--110
+Overfull \hbox (42.28726pt too wide) in paragraph at lines 108--112
 []\T1/aer/bx/n/10.95 Note:  \T1/aer/m/n/10.95 There are files al-ready in the r
 epo which can be used, namely \T1/aett/m/n/10.95 linger_h100n216.dat
  []
@@ -740,7 +740,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  9815 strings out of 495021
  144054 string characters out of 1181034
- 246791 words of memory out of 3000000
+ 247791 words of memory out of 3000000
  12702 multiletter control sequences out of 15000+50000
  95628 words of font info for 140 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
@@ -757,7 +757,7 @@ hare/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/tex
 mf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lms
 y6.pfb>
-Output written on AWESOME_doku.pdf (3 pages, 168127 bytes).
+Output written on AWESOME_doku.pdf (3 pages, 169974 bytes).
 PDF statistics:
  114 PDF objects out of 1000 (max. 8388607)
  14 named destinations out of 1000 (max. 500000)

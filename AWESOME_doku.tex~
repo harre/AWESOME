@@ -99,9 +99,11 @@ When one executes the program from github, the message
  >>>>>    $./linger_syn | tee lingersynIO.out
  	
 \end{verbatim}
-motivates the recording of IO in order to ensure the reproducability of simulations. 
+motivates the recording of IO in order to ensure reproducability of simulations. 
 Ideally one would also indicate some physical parameters in 
-the IO file, such as \texttt{lingersynIO\_h70.out}. 
+the IO file, such as \texttt{lingersynIO\_h70.out}. This file is 
+consequently copied from further simulation setup scripts (see later 
+items and sections). 
 
 \textbf{Note: } There are files already in the repo which can be used, namely 
 \texttt{linger\_h100n216.dat} and  \texttt{linger\_h70n216.dat} for 
@@ -116,6 +118,12 @@ and the parameters
  Enter kmin (1/Mpc), kmax (1/Mpc), nk, zend
 \end{verbatim}
 are set to \texttt{1E-5}, \texttt{50}, \texttt{216}, \texttt{0}. 
+These numbers are chosen partially arbitrary but have proven 
+robust. The upper limit for the wave number certainly will be too small 
+for larger volumes than $100$Mpc (Nyquist frequency). The 
+number of $k$ to be calculated are chosen in a way that the calculation 
+does not last too long. 
+
 The last input is then which kind of IC one wants to generate 
 \begin{verbatim}
  Initial conditions cases:
