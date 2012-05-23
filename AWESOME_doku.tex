@@ -839,10 +839,18 @@ therefore the physical velocity is the peculiar velocity plus the Hubble flow. I
 The snapshot format is described on page 32 of the users guide. As suposed, the particle positions are (if we did not change the units) in comoving kpc/h. The particle velocities in the snapshot are in $u$ in internal units, so peculiar velocities can be obtained by multiplying $u$ with $\sqrt{a}$. Therefore, we have to pay attention, that the velocities in Gadget are neither physical nor comoving velocities!.
 
 \subsection{Visualízing Gadget Snapshots}
-\subsubsection{Splash}
-Splash can be obtained from \url{http://users.monash.edu.au/~dprice/splash/download.html}. To compile, we have to change in line 33 of the Makefile under splash/build the variable \texttt{X11LIBS} to
-\texttt{X11LIBS= -L/usr/lib/x86_64-linux-gnu/}.
-instead of make, use \texttt{make SYSTEM=gfortran}, then splash should compile under Ubuntu 12.04.
+% \subsubsection{Splash}
+% Splash can be obtained from \url{http://users.monash.edu.au/~dprice/splash/download.html}. To compile, we have to change in line 33 of the Makefile under splash/build the variable \texttt{X11LIBS} to
+% \texttt{X11LIBS= -L/usr/lib/x86_64-linux-gnu/}.
+% instead of make, use \texttt{make SYSTEM=gfortran}, then splash should compile under Ubuntu 12.04.
+
+\subsection{Splotch}
+Splotch makes very nice renderings of Gadget Files. It can be obtained from \url{http://www.mpa-garching.mpg.de/~kdolag/Splotch/}
+and it compiles fine without bigger problems. It is important to note, that Splotch can only read the Snapshot format 2 of Gadget files (the 
+snapshot format has to be specified in the parameter file of the gadget simulation).
+
+Then it works with parameter files, where the particle types and the viewpoint have to be specified. To see how it works, on can use
+the example parameter and binary file (Homepage under the Section ``Test Example and Documentation'').
 
 \section{Halo Finder + Merger Trees}
 
