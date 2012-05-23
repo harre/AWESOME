@@ -838,6 +838,11 @@ therefore the physical velocity is the peculiar velocity plus the Hubble flow. I
 \textbf{ATTENTION:} We should check again, whether this is what we assumed in the ICs conversion and in giving the values to Rockstar.
 The snapshot format is described on page 32 of the users guide. As suposed, the particle positions are (if we did not change the units) in comoving kpc/h. The particle velocities in the snapshot are in $u$ in internal units, so peculiar velocities can be obtained by multiplying $u$ with $\sqrt{a}$. Therefore, we have to pay attention, that the velocities in Gadget are neither physical nor comoving velocities!.
 
+\subsection{Visualízing Gadget Snapshots}
+\subsubsection{Splash}
+Splash can be obtained from \url{http://users.monash.edu.au/~dprice/splash/download.html}. To compile, we have to change in line 33 of the Makefile under splash/build the variable \texttt{X11LIBS} to
+\texttt{X11LIBS= -L/usr/lib/x86_64-linux-gnu/}.
+instead of make, use \texttt{make SYSTEM=gfortran}, then splash should compile under Ubuntu 12.04.
 
 \section{Halo Finder + Merger Trees}
 
