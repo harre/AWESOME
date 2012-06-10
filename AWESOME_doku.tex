@@ -147,6 +147,49 @@ and \text{lingerg.dat} first.
 
 \section{N-body Simulation}
 
+\subsection{Compiling Gadget}
+Gadget has dependencies on MPI, the FFTW and GSL (HDF5 is possible but not required, if you specify so in the Makefile). To Compile on leo 2 we have to load the modules\\
+\texttt{module load intel/11.1 openmpi/1.3.3 fftw/2.1.5   gsl/1.12}\\
+However, the modules environment on leo2 changed the environment variables. The easiest way to compile is to change in line 89 the systype to\\
+\texttt{SYSTYPE="leo"}\\
+and later define
+\begin{verbatim}
+ifeq ($(SYSTYPE),"leo")
+CC       =  mpicc   
+OPTIMIZE =   -Wall 
+GSL_INCL =  -I$(UIBK_GSL_INC)
+GSL_LIBS =  -L$(UIBK_GSL_LIB) 
+FFTW_INCL=  -I$(UIBK_FFTW_INC)
+FFTW_LIBS=  -L$(UIBK_FFTW_LIB)
+MPICHLIB =
+HDF5INCL =  -I/opt/hdf5/include
+HDF5LIB  =  -L/opt/hdf5/lib -lhdf5 -lz  -Wl,"-R /opt/hdf5/lib"
+endif
+\end{verbatim}
+after that just type ``make'' and Gadget should compile.
+
+\subsection{Gadget2 Units}
+If we make cosmological simulations (which we do) the internal time unit of Gadget is actually the scale factor and not the physical time (at least I think that this is the case). Starting at page 25 of the Gadget user guid \url{http://www.mpa-garching.mpg.de/galform/gadget/users-guide.pdf} the unit system is described. From there, it seems that the internal units of Gadget are
+\begin{description}
+ \item[UnitVelocity\_in\_cm\_per\_s] is by default set to 1e5 cm/s which is 1 km/s. At the moment, I don't understand if this is the proper, physical or peculiar velocity.
+  \item[UnitLenght\_in\_cm] is by default set to 3.085679e21 cm/h, where the Hubble constant is $H_0 = 100 h$ km s$^{-1}$Mpc$^{-1}$. This sets the unitg length to 1.0 kpc/h. If \texttt{ComovingIntegrationOn} is set to true (which it should be four our purposes), our UnitLength is in comoving coordinates. To get the physical coordinates, we should multiply the comoving coordinates with the scale factor a.
+  \item[UnitMass\_in\_g] is by default set to 1.989e43 g/h which is just $10^{10}$M$_\odot$/h.
+\end{description}
+I therefore suppose that if we would like to simulate a ``physical'' universe with $H_0=70$km/s/Mpc, we would have to multiply the \texttt{UnitLength\_in\_cm} and the \texttt{UnitMass\_in\_g} by $h=0.7$. Another possibility should be to just convert the numbers after the simulation has finished (multiplying Length and mass by h and velocity?).
+
+\textbf{ATTENTION:} In the cosmological parameters of the Gadget start file there is the \texttt{HubbleParam} variable. This variable has no influence on the used units. It is only used, if we also do an SPH simulation for the gas, because for the cooling it is necessary to convert to physical units.
+
+For me, i still don't understand how the velocity units work. Interesting in this repsect is this post \url{http://www.mpa-garching.mpg.de/gadget/gadget-list/0113.html} on the Gadget mailing list. It states that the Initial Conditions file should contain the peculiar velocity divided by $\sqrt{a}$. To clarify the nomenclature (see the post), we let $x$ denote the comoving coordinates and $r=a\cdot x$ the physical coordinates. We then define
+\begin{description}
+ \item[Comoving velocity] $\frac{\textrm{d}x}{\textrm{d}t}$
+  \item[Physical velocity] $\frac{\textrm{d}r}{\textrm{d}t} = H(a)\cdot r+a\cdot \frac{\textrm{d}x}{\textrm{d}t}$
+  \item[Peculiar velocity] $v = a\cdot \frac{\textrm{d}x}{\textrm{d}t}$ 
+\end{description}
+therefore the physical velocity is the peculiar velocity plus the Hubble flow. I think the post also states, that the velocity variable in the snapshot files is $u=v/\sqrt{a}$, the peculiar velocity divided by $\sqrt{a}$.
+\textbf{ATTENTION:} We should check again, whether this is what we assumed in the ICs conversion and in giving the values to Rockstar.
+The snapshot format is described on page 32 of the users guide. As suposed, the particle positions are (if we did not change the units) in comoving kpc/h. The particle velocities in the snapshot are in $u$ in internal units, so peculiar velocities can be obtained by multiplying $u$ with $\sqrt{a}$. Therefore, we have to pay attention, that the velocities in Gadget are neither physical nor comoving velocities!.
+
+
 \section{Halo Finder + Merger Trees}
 
 \section{SAM}
@@ -172,5 +215,6 @@ bzr checkout http://bazaar.launchpad.net/~abenson/galacticus/v0.9.1/
 \setcitestyle{authoryear,round,citesep={;},aysep={,},yysep={;}}
 \gdef\harvardand{\&}
 \end{document}
+
 
 

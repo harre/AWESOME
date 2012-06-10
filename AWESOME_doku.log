@@ -1,12 +1,11 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.18)  18 APR 2012 14:09
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.5.9)  21 MAY 2012 13:01
 entering extended mode
  %&-line parsing enabled.
 **AWESOME_doku.tex
 (./AWESOME_doku.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, ngerman, german, german-x-2009-06-19, ngerman-x-2009-06-19, loaded.
-
+yphenation, loaded.
 (/usr/share/texmf-texlive/tex/latex/koma-script/scrartcl.cls
 Document Class: scrartcl 2009/07/24 v3.04a KOMA-Script document class (article)
 
@@ -731,35 +730,44 @@ epo which can be used, namely \T1/aett/m/n/10.95 linger_h100n216.dat
  []
 
 [2]
+Overfull \hbox (52.61871pt too wide) in paragraph at lines 175--176
+\OML/lmm/m/it/10.95 H[] \OT1/lmr/m/n/10.95 = 100\OML/lmm/m/it/10.95 h$ \T1/aer/
+m/n/10.95 km s$[]$Mpc$[]$. This sets the unitg length to 1.0 kpc/h. If \T1/aett
+/m/n/10.95 ComovingIntegrationOn
+ []
+
+[3]
 No file AWESOME_doku.bbl.
-[3] (./AWESOME_doku.aux)
+[4] (./AWESOME_doku.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 9815 strings out of 495021
- 144054 string characters out of 1181034
- 247791 words of memory out of 3000000
- 12702 multiletter control sequences out of 15000+50000
- 95628 words of font info for 140 fonts, out of 3000000 for 9000
+ 9825 strings out of 495061
+ 144128 string characters out of 1182622
+ 247784 words of memory out of 3000000
+ 12688 multiletter control sequences out of 15000+50000
+ 98690 words of font info for 146 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 47i,14n,43p,246b,485s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 47i,14n,43p,481b,485s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
 c/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/s
 hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-
 texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/font
 s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/publ
-ic/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
-m/cmsl10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssbx10.
-pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/publi
-c/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/tex
-mf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lms
-y6.pfb>
-Output written on AWESOME_doku.pdf (3 pages, 169974 bytes).
+ic/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
+m/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsl10.pfb>
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/
+share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/publi
+c/lm/lmsy8.pfb>
+Output written on AWESOME_doku.pdf (4 pages, 201171 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
- 14 named destinations out of 1000 (max. 500000)
+ 135 PDF objects out of 1000 (max. 8388607)
+ 17 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
